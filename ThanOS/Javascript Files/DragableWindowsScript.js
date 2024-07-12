@@ -1,3 +1,5 @@
+// ATTENTION: In this file, I somehow have not followed the DRY rule, because I cannot find a way to have the same behavior for every window component (Also due to the bad HTML code); Any help would be much appreciated.
+
 //Used in version-history.html
 // Make the DIV element draggable:
 dragElement(document.getElementById("update-window"));
