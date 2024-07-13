@@ -5,7 +5,7 @@ ThanOS is a simple and open source Operating System dedicated to older machines 
 
 Special Thanks
 --------
-I want to give special thanks to [@davidcallanan](https://github.com/davidcallanan) for providing me with some essential OSdev skills to be able to do this project.
+I want to give special thanks to [@davidcallanan](https://github.com/davidcallanan) and [@cfenollosa](https://github.com/cfenollosa) for providing me with some essential OSdev skills to be able to do this project through their amazing repositories.
 
 Other Stuff
 --------
