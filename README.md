@@ -5,7 +5,7 @@ WARNING! This project is currently under development. Please don't download the 
 
 Special Thanks
 --------
-I want to give special thanks to [@davidcallanan](https://github.com/davidcallanan)for providing me with some essential OSdev skills to be able to do this project.
+I want to give special thanks to [@davidcallanan](https://github.com/davidcallanan) for providing me with some essential OSdev skills to be able to do this project.
 
 Other Stuff
 --------
