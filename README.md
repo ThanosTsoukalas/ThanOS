@@ -14,7 +14,7 @@ Architecture:
 - The processor must be running at least at 1GHz _(1.4GHz Recommended)_
   
 Video Card Requirements:
-- Integrated Graphics or Separate GPU_(Recommended)_ (If your computer does not have one, it is most likely not compatible with ThanOS)
+- Integrated Graphics or Separate GPU _(Recommended)_ _(If your computer does not have one, it is most likely not compatible with ThanOS)_
   
 RAM:
 - At least 2GB of RAM _(4GB Recommended)_
