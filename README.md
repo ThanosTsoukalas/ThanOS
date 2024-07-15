@@ -10,7 +10,8 @@ I want to give special thanks to [@davidcallanan](https://github.com/davidcallan
 [Estimated] System Requirements
 --------
 Architecture:
-- x86_64 Processor Architecture
+- x86_64 Processor Architecture _(Intel Processor Recommended)_
+- The processor must be running at least at 1GHz _(1.4GHz Recommended)_
   
 Video Card Requirements:
 - Integrated Graphics or Separate GPU_(Recommended)_ (If your computer does not have one, it is most likely not compatible with ThanOS)
