@@ -7,6 +7,22 @@ Special Thanks
 --------
 I want to give special thanks to [@davidcallanan](https://github.com/davidcallanan) and [@cfenollosa](https://github.com/cfenollosa) for providing me with some essential OSdev skills to be able to do this project through their amazing repositories.
 
+[Estimated] System Requirements
+--------
+Architecture:
+- x86_64 Processor Architecture
+  
+Video Card Requirements:
+- Integrated Graphics or Separate GPU_(Recommended)_ (If your computer does not have one, it is most likely not compatible with ThanOS)
+  
+RAM:
+- At least 2GB of RAM _(4GB Recommended)_
+
+Storage Space:
+- At least 25GB of **HDD** or **SSD** Storage Space _(128GB SSD Recommended)_
+
+_Please note that the system requirements above are illustrative and may change as the operating system reaches its final stages. The only testing done so far is with an emulator._
+
 Other Stuff
 --------
 I use Qemu for testing the OS. I also used Docker to develop this project.
