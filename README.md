@@ -10,3 +10,5 @@ I want to give special thanks to [@davidcallanan](https://github.com/davidcallan
 Other Stuff
 --------
 I use Qemu for testing the OS. I also use Docker to develop this project.
+Most of my technical knowledge comes from [https://wiki.osdev.org/](https://wiki.osdev.org/)
+
