@@ -30,4 +30,4 @@ I use Qemu for testing the OS. I also used Docker to develop this project.
 Most of my technical knowledge comes from [https://wiki.osdev.org/](https://wiki.osdev.org/)
 
 # ThanOS Web
-If you want to use the web version of ThanOS, you can check out [this repository](https://github.com/ThanosTsoukalas/ThanOSWeb)
+If you want to use the web version of ThanOS and view the actual UI _(I haven't made the UI in this distribution yet)_, you can check out [this repository](https://github.com/ThanosTsoukalas/ThanOSWeb)!
