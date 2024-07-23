@@ -1,0 +1,14 @@
+{
+  "name": "thanos-workspace-environment",
+  "version": "1.0.5",
+  "description": "The most lightweight HTML Workspace",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Thanos Tsoukalas",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^31.2.1"
+  }
+}
