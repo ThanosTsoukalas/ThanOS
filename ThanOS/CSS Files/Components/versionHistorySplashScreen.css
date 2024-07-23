@@ -1,0 +1,97 @@
+/*Used in version-history.html*/
+
+.welcome-screen{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(48px);
+    background-color: #e3e5e8;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    font-weight: 300;
+    padding: 0.7rem;
+    border-radius: 15px;
+}
+.welcome-screen .continue-button-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.welcome-screen .continue-button-wrapper .continue{
+    cursor: pointer;
+    width: 10rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid #404041;
+    border-radius: 25px;
+}
+.welcome-screen .continue-button-wrapper .continue:hover{
+    animation: changeButtonColorDefaultLayout .35s cubic-bezier(.17,.6,.22,.88);
+    animation-fill-mode: forwards;
+}
+@keyframes changeButtonColorDefaultLayout{
+    0%{background-color: white; color:black;}
+    100%{background-color: #404041; color: white;}
+}
+.welcome-screen .header h1{
+    font-weight: 500;
+    margin: 10px;
+    text-align: center;
+}
+.welcome-screen .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid #404041;
+    
+}
+.welcome-screen .header .current-version-pill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #404041;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 25px;
+}
+.welcome-screen .header .current-version-pill p{
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    cursor:pointer;
+}
+.welcome-screen .welcome-screen-content{
+    padding: 0.7rem;
+    text-align: center;
+    line-height: 1.3rem;
+}
+
+.welcome-screen .welcome-screen-content .version{
+    display: flex;
+    align-items: center;
+    background-color: #696969;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.welcome-screen .welcome-screen-content .version:last-child{
+    margin-bottom: 2px;
+}
+.welcome-screen .welcome-screen-content .version .version-number-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    padding-right: 10px;
+    border-right: 1.5px solid white;
+}
+.welcome-screen .welcome-screen-content .version .version-number-description-wrapper{
+    padding-left: 20px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: left;
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <link rel="stylesheet" href="CSS Files/Main/main.css" />
+    <link rel="stylesheet" href="CSS Files/Main/reset.css" />
+    <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
+    <link
+      rel="stylesheet"
+      href="CSS Files/Components/versionHistorySplashScreen.css"
+    />
+    <title>ThanOS</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="guilds-container">
+        <li class="squircle purple-boi">
+          <ion-icon
+            name="person-circle"
+            style="width: 48px; height: 48px; color: #747474"
+          ></ion-icon>
+        </li>
+        <li class="divider"></li>
+        <li class="squircle purple-boi">
+          <img
+            src="Assets/Adobe_Photoshop_CC_icon.svg.png"
+            alt="SoP"
+            class="server-icon"
+          />
+        </li>
+        <li class="squircle purple-boi">
+          <img src="Assets/chrome logo.jpg" alt="SoP" class="server-icon" />
+        </li>
+        <li class="squircle purple-boi">
+          <img
+            src="Assets/discord-logo-icon-editorial-free-vector.jpg"
+            alt="SoP"
+            class="server-icon"
+          />
+        </li>
+        <li class="squircle systemApp">
+          <svg
+            class="circleIcon-LvPL6c"
+            aria-hidden="false"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z"
+            ></path>
+          </svg>
+        </li>
+        <li class="squircle systemApp">
+          <svg aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM14.19 14.19L6 18L9.81 9.81L18 6L14.19 14.19Z"
+            ></path>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+    <div class="welcome-screen">
+      <div class="header">
+        <h1>1.0.5</h1>
+        <div
+          class="current-version-pill"
+          onclick="openCurrentVersionFeatureView()"
+        >
+          <p>Current Version</p>
+        </div>
+      </div>
+      <div class="welcome-screen-content">
+        <div class="version">
+          <div class="version-number-wrapper">1.0.4</div>
+          <div class="version-number-description-wrapper">
+            Added the version restore system along with the internal file
+            management system.
+          </div>
+        </div>
+        <div class="version">
+          <div class="version-number-wrapper">1.0.3</div>
+          <div class="version-number-description-wrapper">
+            Introduced the splash screen and the right click component.
+          </div>
+        </div>
+        <div class="version">
+          <div class="version-number-wrapper">1.0.2</div>
+          <div class="version-number-description-wrapper">
+            Fixed bugs regarding the wallpaper placement and dimensions. Added
+            animations to various components of the operating system.
+          </div>
+        </div>
+        <div class="version">
+          <div class="version-number-wrapper">1.0.1</div>
+          <div class="version-number-description-wrapper">
+            Introduced the vertical taskbar for the first time. Fixed bugs
+            regarding icon compatibility with the taskbar.
+          </div>
+        </div>
+        <div class="version last">
+          <div class="version-number-wrapper">1.0.0</div>
+          <div class="version-number-description-wrapper">
+            Created the index.html file. And a new Operating System was born!
+          </div>
+        </div>
+      </div>
+      <div class="continue-button-wrapper">
+        <button class="continue" id="back-to-index" onclick="backToIndex()">
+          Continue
+        </button>
+        <button
+          class="continue"
+          style="margin-left: 10px"
+          onclick="openUpdateChecker()"
+          id="update-button"
+        >
+          Update
+        </button>
+        <button class="continue" style="margin-left: 10px">
+          Other versions
+        </button>
+      </div>
+    </div>
+    <!-- Your system is up to date/not up to date window -->
+    <div id="update-window" class="update-window">
+      <div id="update-windowheader" class="update-windowheader">
+        ThanOS Update Checker
+      </div>
+      <div class="window-content">
+        <div class="window-flex-row-wrapper">
+          <ion-icon
+            name="checkmark-circle-outline"
+            class="check-icon"
+          ></ion-icon>
+          <div class="update-window-text">
+            <h1>Your System is up to date!</h1>
+            Congrats! You have kept your system in a healthy state by providing
+            it with the latest security and quality updates! If you have any
+            problems regarding your system being up to date, click the button
+            below.
+          </div>
+        </div>
+        <div class="window-continue-button-wrapper">
+          <button
+            class="window-button-continue"
+            style="font-size: 0.75rem"
+            onclick="openUpdateResolver()"
+            id="helpButton"
+          >
+            I have update problems
+          </button>
+          <button
+            class="window-button-continue"
+            style="margin-left: 10px"
+            onclick="closeUpdateChecker()"
+            id="closeButton"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="resolve-window" class="update-window">
+      <div id="resolve-windowheader" class="update-windowheader">
+        ThanOS Update Resolver
+        <div class="window-buttons">
+          <div class="closeButton" onclick="closeResolveWindow()">
+            <ion-icon name="close"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="resolve-window-content">
+        <h1>Describe your problem.</h1>
+        <div class="resolve-window-button-container">
+          <div class="window-button-continue-resolve-wrapper">
+            <button
+              class="window-button-continue"
+              style="width: fit-content; padding: 10px"
+            >
+              I can't seem to get access to the latest version of ThanOS
+            </button>
+          </div>
+          <div class="window-button-continue-resolve-wrapper">
+            <button
+              class="window-button-continue"
+              style="width: fit-content; padding: 10px"
+            >
+              I have compatibility issues with the latest vesrion
+            </button>
+          </div>
+          <div class="window-button-continue-resolve-wrapper">
+            <button
+              class="window-button-continue"
+              style="width: fit-content; padding: 10px"
+            >
+              Everything seems to be laggy or buggy after an update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="CurrentVersionFeatureView-window" class="update-window">
+      <div
+        id="CurrentVersionFeatureView-windowheader"
+        class="update-windowheader"
+      >
+        What's new on ThanOS
+        <div class="window-buttons">
+          <div class="closeButton" onclick="closeFeaturesWindow()">
+            <ion-icon name="close"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="resolve-window-content">
+        <h1>What's new?!</h1>
+        <ul class="new-features">
+          <li>
+            <ion-icon
+              name="arrow-forward-outline"
+              class="list-chevron"
+            ></ion-icon
+            >Added a new Window Management System, alongside with the first
+            window component!
+          </li>
+          <li>
+            <ion-icon
+              name="arrow-forward-outline"
+              class="list-chevron"
+            ></ion-icon
+            >Fixed a lot of bugs regarding window placement and window
+            behaviour.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="content">
+        <ul class="menu">
+          <li class="item">
+            <i class="uil uil-eye"></i>
+            <span>Preview</span>
+          </li>
+          <li class="item">
+            <i class="uil uil-link-alt"></i>
+            <span>Get Path Address</span>
+          </li>
+          <li class="item">
+            <i class="uil uil-edit"></i>
+            <span>Rename</span>
+          </li>
+          <li class="item">
+            <i class="uil uil-trash-alt"></i>
+            <span>Delete</span>
+          </li>
+        </ul>
+        <div class="setting">
+          <li class="item">
+            <i class="uil uil-setting"></i>
+            <span>Settings</span>
+          </li>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="Javascript Files/VersionHistoryOpenCloseSystemWindows.js"></script>
+  <script src="Javascript Files/DragableWindowsScript.js"></script>
+  <script src="Javascript Files/RighClickActivationComponent.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>
