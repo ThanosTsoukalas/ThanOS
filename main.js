@@ -6,7 +6,7 @@ const createWindow = () => {
         height: 600
     })
 
-    win.loadFile('ThanOS/index.html')
+    win.loadFile('ThanOS/bootloader.html')
 }
 
 app.whenReady().then(() => {
