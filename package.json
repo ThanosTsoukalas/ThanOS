@@ -1,5 +1,6 @@
 {
   "name": "thanos-workspace-environment",
+  "productName": "ThanOS Workspace Environment",
   "version": "1.0.5",
   "description": "The most lightweight HTML Workspace",
   "main": "main.js",
@@ -20,7 +21,8 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "^31.2.1"
+    "electron": "^31.2.1",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",

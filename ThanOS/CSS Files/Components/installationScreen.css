@@ -1,0 +1,104 @@
+.installation-screen-wrapper .screen-mode-wrapper .mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #404041;
+    width: 5rem;
+    height: 5.3rem;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin: 0.3rem;
+}
+
+.installation-screen-wrapper .screen-mode-wrapper .mode:last-child {
+    background-color: #404041;
+}
+
+.screen-mode-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 0.4rem;
+}
+
+#choose-region {
+    justify-content: center;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    flex-direction: column;
+}
+
+.region {
+    width: 20rem;
+    height: 1.5rem;
+    background-color: rgb(125, 125, 125);
+    color: white;
+    padding: 0.5rem;
+    border-bottom: 2px solid #404041;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.region:hover {
+    background-color: #565656;
+}
+
+.region:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 2px solid #404041;
+}
+
+.region:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: none;
+}
+
+.info-for-language {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -1.3rem;
+    margin-bottom: -1.3rem;
+}
+
+.info-for-language .info {
+    font-size: 0.8rem;
+    color: #575757;
+    font-weight: 300px;
+}
+
+.info-for-language .language-info {
+    font-size: 8rem;
+    padding: 0.3rem;
+    margin-right: 0.4rem;
+}
+
+/*I have declared display:flex; in the javascript files for various reasons*/
+.privacy-notice {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #565656;
+    margin-bottom: 0.5rem;
+}
+
+.privacy-notice .privacy-icon {
+    font-size: 3rem;
+    margin: 0.6rem;
+    color: rgb(24, 109, 255);
+
+}
+
+.quick-setup-info {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #565656;
+    margin: 0.5rem;
+}

@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/iciel-gotham');
+
 :root {
 	--color-blurple: #7289da;
 	--color-not-quite-black: #23272a;
@@ -11,7 +12,8 @@
 }
 
 body {
-	background-image: url(DefaultWallpaper.jpg); /*Only works if the file is in the parent folder; DO NOT MOVE*/
+	background-image: url(DefaultWallpaper.jpg);
+	/*Only works if the file is in the parent folder; DO NOT MOVE*/
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: cover;
@@ -33,6 +35,7 @@ nav {
 	overflow-y: scroll;
 	width: 100%;
 }
+
 nav::-webkit-scrollbar {
 	display: none;
 }
@@ -61,18 +64,26 @@ nav::-webkit-scrollbar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: transform .35s cubic-bezier(.17,.6,.22,.88);
+	transition: transform .35s cubic-bezier(.17, .6, .22, .88);
 	box-shadow: rgba(120, 120, 120, 0.16) 0px 10px 36px 0px, rgba(112, 112, 112, 0.06) 0px 0px 0px 1px;
 }
+
 .squircle:hover {
 	transform: rotateY(-35deg) scale(1.1) translateX(10px) translateY(-5px);
-	animation: boxShadowAnimationTaskBar .35s cubic-bezier(.17,.6,.22,.88);
+	animation: boxShadowAnimationTaskBar .35s cubic-bezier(.17, .6, .22, .88);
 	animation-fill-mode: forwards;
 }
-@keyframes boxShadowAnimationTaskBar{
-	0%{box-shadow: rgba(0, 0, 0, 0) 0px 22px 70px 4px;}
-	100%{box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;}
+
+@keyframes boxShadowAnimationTaskBar {
+	0% {
+		box-shadow: rgba(0, 0, 0, 0) 0px 22px 70px 4px;
+	}
+
+	100% {
+		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+	}
 }
+
 /* pill */
 .squircle::before {
 	content: '';
@@ -123,6 +134,7 @@ nav::-webkit-scrollbar {
 	left: 80px;
 	background: var(--color-grey-dark);
 }
+
 .panel:hover .tag,
 .panel:hover .status-emoji {
 	transform: translateY(-128%);
@@ -150,6 +162,7 @@ nav::-webkit-scrollbar {
 	cursor: pointer;
 	font-weight: 600;
 }
+
 .status-holder {
 	position: absolute;
 	background: var(--color-not-quite-black);
@@ -203,6 +216,7 @@ nav::-webkit-scrollbar {
 	align-items: center;
 	position: relative;
 }
+
 .switcher:hover {
 	background: var(--color-lighter-dark);
 }
@@ -213,18 +227,20 @@ nav::-webkit-scrollbar {
 }
 
 /*Right Click components*/
-.wrapper{
+.wrapper {
 	visibility: hidden;
 	position: absolute;
 	width: 300px;
 	border-radius: 10px;
 	background: #fff;
-	box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-  }
-  .wrapper .menu{
+	box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .menu {
 	padding: 10px 12px;
-  }
-  .content .item{
+}
+
+.content .item {
 	list-style: none;
 	font-size: 0.5rem;
 	height: 35px;
@@ -235,26 +251,31 @@ nav::-webkit-scrollbar {
 	border-radius: 5px;
 	margin-bottom: 2px;
 	padding: 0 5px 0 10px;
-  }
-  .content .item:hover{
+}
+
+.content .item:hover {
 	background: #f2f2f2;
-  }
-  .content .item span{
+}
+
+.content .item span {
 	margin-left: 8px;
 	font-size: 1rem;
 	font-weight: 100;
-  }
-  .content .setting{
+}
+
+.content .setting {
 	display: flex;
 	margin-top: -5px;
 	padding: 5px 12px;
 	border-top: 1px solid #ccc;
-  }
-  .content .share{
+}
+
+.content .share {
 	position: relative;
 	justify-content: space-between;
-  }
-  .share .share-menu{
+}
+
+.share .share-menu {
 	position: absolute;
 	background: #fff;
 	width: 200px;
@@ -264,10 +285,11 @@ nav::-webkit-scrollbar {
 	opacity: 0;
 	pointer-events: none;
 	border-radius: 10px;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
 	transition: 0.2s ease;
-  }
-  .share:hover .share-menu{
+}
+
+.share:hover .share-menu {
 	opacity: 1;
 	pointer-events: auto;
-  }
+}

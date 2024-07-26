@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
+    <link rel="stylesheet" href="CSS Files/Components/installationScreen.css" />
+    <link rel="stylesheet" href="CSS Files/Components/dropdowns.css" />
     <title>ThanOS</title>
   </head>
   <body>
@@ -51,13 +53,67 @@
     </nav>
     <div class="welcome-screen" style="display: flex;">
       <div class="header">
-        <h1>Choose your look.</h1>
+        <h1 id="installation-heading">Choose your look.</h1>
       </div>
+      <!-- Dark mode and light mode -->
       <div class="installation-screen-wrapper">
-<!-- No Elements here yet -->
+        <div class="screen-mode-wrapper">
+          <div class="mode">
+            <ion-icon name="sunny-outline" style="font-size: 2rem;"></ion-icon>
+          </div>
+          <div class="mode">
+            <ion-icon name="moon-outline" style="font-size: 2rem; color: white;"></ion-icon>
+          </div>
+        </div>
       </div>
+      <!-- Region -->
+      <div id="choose-region" style="display: none;">
+        <div class="regions">
+          <div class="region" id="greece-region">
+            Greece
+            <ion-icon name="chevron-forward-outline" class="location-chevron"></ion-icon>
+          </div>
+          <div class="region" id="germany-region">
+            Germany
+            <ion-icon name="chevron-forward-outline" class="location-chevron"></ion-icon>
+          </div>
+          <div class="region" id="us-region">
+            United States
+            <ion-icon name="chevron-forward-outline" class="location-chevron"></ion-icon>
+          </div>
+          <div class="region" id="uk-region">
+            United Kingdom
+            <ion-icon name="chevron-forward-outline" class="location-chevron"></ion-icon>
+          </div>
+          <div class="region" id="other-region">
+            Other
+            <ion-icon name="chevron-forward-outline" class="location-chevron"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="info-for-language" id="language-notice">
+        <ion-icon name="information-circle-outline" class="language-info"></ion-icon>
+        <div class="info">
+          At the moment, we do not support any language other than English, due to font family problems. German and Greek will be coming to ThanOS later this year.
+        </div>
+      </div>
+      <!-- Data and privacy -->
+       <div class="privacy-notice" id="privacy-notice" style="display: none;">
+        <ion-icon name="lock-closed" class="privacy-icon"></ion-icon>
+        <div class="privacy-info">
+          ThanOS saves all your files, documents and preferences on local folders,
+           and thus does not collect them nor share them with any Third Party. 
+           Telemetry data are also not collected. ThanOS also does not collect any data about purchases or transactions within its Platform and does not share information with advertisers or trackers.
+        </div>
+       </div>
+       <div id="quick-setup-info" class="quick-setup-info" style="display: none;">
+        With Quick Setup, you can import Configuration Files to Set Up ThanOS however you like in a couple of seconds. If you don't have any Configuration Files, click 'No Thanks'.
+       </div>
       <div class="continue-button-wrapper">
-        <button class="continue" id="installation-next-button" onclick="startOnBoardingFlowService()">
+        <button class="continue" id="no-thanks-for-quick-setup" style="margin-right: 0.4rem; display: none;">
+          No Thanks
+        </button>
+        <button class="continue" id="installation-next-button">
           Next
         </button>
       </div>
@@ -67,40 +123,83 @@
       <div class="content">
         <ul class="menu">
           <li class="item">
-            <i class="uil uil-eye"></i>
             <span>Preview</span>
           </li>
           <li class="item">
-            <i class="uil uil-link-alt"></i>
             <span>Get Path Address</span>
           </li>
           <li class="item">
-            <i class="uil uil-edit"></i>
             <span>Rename</span>
           </li>
           <li class="item">
-            <i class="uil uil-trash-alt"></i>
             <span>Delete</span>
           </li>
         </ul>
         <div class="setting">
           <li class="item">
-            <i class="uil uil-setting"></i>
             <span>Settings</span>
           </li>
         </div>
       </div>
     </div>
   </body>
+  <!-- DO NOT MAKE THIS SCRIPT MODULAR (AKA DO NOT MOVE THIS IN ANOTHER FILE) -->
   <script>
-    const onBoardingButton = document.getElementById('continue-installaton');
-    function startOnBoardingFlowService(){
-      window.location.href = 'initial-settings.html';
-    }
+    const next = document.getElementById('installation-next-button');
+    const installationHeading = document.getElementById('installation-heading');
+    const privacyNotice = document.getElementById('privacy-notice');
+    const noThanksForQuickSetup = document.getElementById('no-thanks-for-quick-setup');
+    const QuickSetupInfo = document.getElementById('quick-setup-info');
+    let clickState = 0;
+    let enterWorkspace = false;
+    // writeFile is used to store the user's preferences across the platform by writing on the 'System Files' Folder.
+    // writeFile also does not work yet, meaning that the user's settings aren't saved. Expected to work on beta 4 (currently on beta 3)
+    let writeFile = ''; 
+
+    next.addEventListener('click', function(){
+      if (clickState === 0){
+        document.querySelector('.screen-mode-wrapper').style.display = 'none';
+        installationHeading.innerHTML = 'Choose your location.';
+        document.getElementById('choose-region').style.display = 'flex';
+        document.getElementById('language-notice').style.display = 'flex';
+        clickState = 1;
+      } else if (clickState === 1){
+        document.querySelector('.screen-mode-wrapper').style.display = 'none';
+        document.getElementById('choose-region').style.display = 'none';
+        document.getElementById('language-notice').style.display = 'none';
+        privacyNotice.style.display = 'flex';
+        installationHeading.innerHTML = 'Privacy and Security';
+        clickState = 2;
+      }else if (clickState === 2){
+        document.querySelector('.screen-mode-wrapper').style.display = 'none';
+        document.getElementById('privacy-notice').style.display = 'none';
+        document.getElementById('choose-region').style.display = 'none';
+        noThanksForQuickSetup.style.display = 'initial';
+        installationHeading.innerHTML = 'Quick Setup';
+        QuickSetupInfo.style.display = 'initial';
+        next.innerHTML = 'Import from file'
+        clickState = 3;
+      }else if (clickState === 3){
+        window.location.href = 'workspace.html';
+      }
+    })
+    noThanksForQuickSetup.addEventListener('click', function(){
+      document.querySelector('.screen-mode-wrapper').style.display = 'none';
+      document.getElementById('privacy-notice').style.display = 'none';
+      document.getElementById('choose-region').style.display = 'none';
+      installationHeading.innerHTML = 'You are all set!';
+      noThanksForQuickSetup.style.display = 'none';
+      QuickSetupInfo.style.display = 'none';
+      next.innerHTML = 'Enter Workspace!';
+    })
+    // used for debugging
+    console.log(clickState);
+    console.log(writeFile)
   </script>
   <!-- Scripts Sources -->
   <script src="Javascript Files/RighClickActivationComponent.js"></script>
   <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
+  <script src="Javascript Files/DragableWindowsScript.js"></script>
   <!-- Icon Sources -->
   <script
     type="module"
