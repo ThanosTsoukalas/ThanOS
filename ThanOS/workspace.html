@@ -1,9 +1,94 @@
-<!-- Not yet developed -->
- <div class="welcome-screen">
-    workspace.html 
-    is not yet developed 
-    <a href="index.html" style="margin: 10px;">index.html</a>
-    <a href="initial-settings.html">initial-settings.html</a>
- </div>
- <link rel="stylesheet" href="CSS Files/Main/main.css">
- <link rel="stylesheet" href="CSS Files/Components/versionHistorySplashScreen.css">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <link rel="stylesheet" href="CSS Files/Main/main.css" />
+    <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
+    <link rel="stylesheet" href="CSS Files/Main/reset.css" />
+    <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
+    <title>ThanOS</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="guilds-container">
+        <li class="squircle ">
+          <ion-icon
+            name="person-circle"
+            style="width: 48px; height: 48px; color: #747474"
+          ></ion-icon>
+        </li>
+        <li class="divider"></li>
+        <li class="squircle ">
+          <img
+            src="Assets/Adobe_Photoshop_CC_icon.svg.png"
+            alt="SoP"
+            class="app-icon"
+          />
+        </li>
+        <li class="squircle ">
+          <img src="Assets/chrome logo.jpg" alt="SoP" class="app-icon" />
+        </li>
+        <li class="squircle ">
+          <img
+            src="Assets/discord-logo-icon-editorial-free-vector.jpg"
+            alt="SoP"
+            class="app-icon"
+          />
+        </li>
+        <li class="squircle systemApp">
+          <ion-icon name="arrow-down-outline" class="app-icon"></ion-icon>
+        </li>
+        <li class="squircle systemApp">
+          <svg aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM14.19 14.19L6 18L9.81 9.81L18 6L14.19 14.19Z"
+            ></path>
+          </svg>
+        </li>
+      </ul>
+   </nav>
+    <div class="wrapper">
+      <div class="content">
+        <ul class="menu">
+          <li class="item">
+            <span>Preview</span>
+          </li>
+          <li class="item">
+            <span>Get Path Address</span>
+          </li>
+          <li class="item">
+            <span>Rename</span>
+          </li>
+          <li class="item">
+            <span>Delete</span>
+          </li>
+        </ul>
+        <div class="setting">
+          <li class="item">
+            <span>Settings</span>
+          </li>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const onBoardingButton = document.getElementById('continue-installaton');
+    function startOnBoardingFlowService(){
+      window.location.href = 'initial-settings.html';
+    }
+  </script>
+  <!-- Scripts Sources -->
+  <script src="Javascript Files/RighClickActivationComponent.js"></script>
+  <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
+  <!-- Icon Sources -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>
