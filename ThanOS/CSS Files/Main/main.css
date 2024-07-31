@@ -54,7 +54,7 @@ nav::-webkit-scrollbar {
 
 }
 
-.squircle {
+.app-container {
 	background: white;
 	width: 48px;
 	height: 48px;
@@ -68,7 +68,7 @@ nav::-webkit-scrollbar {
 	box-shadow: rgba(120, 120, 120, 0.16) 0px 10px 36px 0px, rgba(112, 112, 112, 0.06) 0px 0px 0px 1px;
 }
 
-.squircle:hover {
+.app-container:hover {
 	transform: rotateY(-35deg) scale(1.1) translateX(10px) translateY(-5px);
 	animation: boxShadowAnimationTaskBar .35s cubic-bezier(.17, .6, .22, .88);
 	animation-fill-mode: forwards;
@@ -85,7 +85,7 @@ nav::-webkit-scrollbar {
 }
 
 /* pill */
-.squircle::before {
+.app-container::before {
 	content: '';
 	width: 100%;
 	height: 100%;
