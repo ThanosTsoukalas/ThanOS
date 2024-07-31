@@ -1,3 +1,5 @@
+
+//All buttons that trigger the Opening of a System Window
 const resolveWindow = document.getElementById("resolve-window");
 const updateWindow = document.getElementById("update-window");
 const updateButton = document.getElementById("update-button");
@@ -8,6 +10,9 @@ const CurrentVersionFeatureView = document.getElementById(
   "CurrentVersionFeatureView-window"
 );
 
+//Regarding Updates
+
+//version-history.html
 function closeFeaturesWindow() {
   CurrentVersionFeatureView.style.display = "none";
 }
@@ -41,3 +46,5 @@ function closeUpdateChecker() {
   updateWindow.style.animationDelay = "0.75s";
   updateWindow.style.display = "none";
 }
+
+//workspace.html

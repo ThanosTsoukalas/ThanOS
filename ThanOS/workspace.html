@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <!-- Essential System Styles -->
     <link rel="stylesheet" href="CSS Files/Main/main.css" />
     <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
+    <link rel="stylesheet" href="CSS Files/Components/openCloseApps.css" />
     <title>ThanOS</title>
   </head>
   <body>
@@ -29,7 +31,7 @@
         <li class="app-container ">
           <img src="Assets/chrome logo.jpg" alt="SoP" class="app-icon" />
         </li>
-        <li class="app-container ">
+        <li class="app-container " id="app">
           <img
             src="Assets/discord-logo-icon-editorial-free-vector.jpg"
             alt="SoP"
@@ -74,21 +76,13 @@
     </div>
   </body>
   <script>
-    const onBoardingButton = document.getElementById('continue-installaton');
-    function startOnBoardingFlowService(){
-      window.location.href = 'initial-settings.html';
-    }
   </script>
   <!-- Scripts Sources -->
   <script src="Javascript Files/RighClickActivationComponent.js"></script>
   <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
+  <script src="Javascript Files/appOpenAnimation.js"></script>
+  <script src="Javascript Files/DragableWindowsScript.js"></script>
   <!-- Icon Sources -->
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
