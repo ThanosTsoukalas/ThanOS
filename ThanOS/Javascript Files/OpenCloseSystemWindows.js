@@ -5,7 +5,6 @@ const updateWindow = document.getElementById("update-window");
 const updateButton = document.getElementById("update-button");
 const closeButton = document.getElementById("closeButton");
 const helpButton = document.getElementById("helpButton");
-const continueButton = document.getElementById("back-to-index");
 const CurrentVersionFeatureView = document.getElementById(
   "CurrentVersionFeatureView-window"
 );
@@ -25,9 +24,7 @@ function openCurrentVersionFeatureView() {
 function closeResolveWindow() {
   resolveWindow.style.display = "none";
 }
-function backToIndex() {
-  window.location.href = "index.html";
-}
+
 function openUpdateResolver() {
   resolveWindow.style.display = "block";
   resolveWindow.style.animationDelay = "0.75s";
