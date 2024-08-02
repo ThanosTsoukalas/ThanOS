@@ -47,6 +47,7 @@ nav::-webkit-scrollbar {
 	flex-direction: column;
 	min-height: 100vh;
 	gap: 1rem;
+	max-width: 5.1rem;
 	position: absolute;
 	box-sizing: border-box;
 	z-index: 2;
@@ -69,7 +70,7 @@ nav::-webkit-scrollbar {
 }
 
 .app-container:hover {
-	transform: rotateY(-35deg) scale(1.1) translateX(10px) translateY(-5px);
+	transform: scale(1.1);
 	animation: boxShadowAnimationTaskBar .35s cubic-bezier(.17, .6, .22, .88);
 	animation-fill-mode: forwards;
 }
@@ -97,15 +98,6 @@ nav::-webkit-scrollbar {
 	transition: transform 180ms;
 }
 
-
-.systemApp {
-	color: var(--color-fantastic-green);
-}
-
-.systemApp:hover {
-	background: var(--color-fantastic-green);
-	color: var(--color-full-white);
-}
 
 .divider {
 	width: 100%;
