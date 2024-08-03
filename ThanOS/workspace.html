@@ -2,32 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.25" />
     <!-- Essential System Styles -->
     <link rel="stylesheet" href="CSS Files/Main/main.css" />
     <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
     <link rel="stylesheet" href="CSS Files/Components/openCloseApps.css" />
+    <link rel="stylesheet" href="CSS Files/Components/info-panel.css" />
     <title>ThanOS</title>
   </head>
   <body id="body">
     <nav>
-      <ul class="guilds-container">
-        <li class="app-container ">
-          <ion-icon
-            name="person-circle"
-            style="width: 48px; height: 48px; color: #747474"
-          ></ion-icon>
-        </li>
-        <li class="divider"></li>
-        <li class="app-container systemApp">
-          <ion-icon name="arrow-down-outline" class="app-icon"></ion-icon>
-        </li>
-        <li class="app-container systemApp">
-          <ion-icon name="folder" class="app-icon"></ion-icon>
-        </li>
-      </ul>
+      <div class="guilds-container">
+        <ul class="apps-constainer">
+          <li class="app-container ">
+            <ion-icon
+              name="person-circle"
+              style="width: 48px; height: 48px; color: #747474;"
+            ></ion-icon>
+          </li>
+          <li class="divider"></li>
+          
+          <li class="app-container">
+            <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;"></ion-icon>
+          </li>
+          <li class="app-container">
+            <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;"></ion-icon>
+          </li> 
+          <li class="app-container">
+            <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;"></ion-icon>
+          </li>
+          <li class="app-container ">
+            <ion-icon name="arrow-down-outline" style="color: #e33e2b; width: 27px; height: 27px;" class="app-icon"></ion-icon>
+          </li>
+        </ul>
+        <div class="info-panel">
+          <div class="time">9:41</div>
+          <div class="controls-button">Ctrls</div>
+          <div class="battery-percentage"><ion-icon name="battery-charging-outline"></ion-icon></div>
+        </div>
+      </div>
+      
    </nav>
    
     <div class="wrapper">

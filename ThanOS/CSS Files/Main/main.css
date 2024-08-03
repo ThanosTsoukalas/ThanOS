@@ -46,18 +46,30 @@ nav::-webkit-scrollbar {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
 	max-width: 5.1rem;
 	position: absolute;
 	box-sizing: border-box;
-	z-index: 2;
 	backdrop-filter: blur(20px);
+}
+
+.apps-container {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	box-sizing: border-box;
+	z-index: 2;
 
 }
 
 .app-container {
 	background: white;
 	width: 48px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	height: 48px;
 	border-radius: 50%;
 	cursor: none;
@@ -67,6 +79,10 @@ nav::-webkit-scrollbar {
 	align-items: center;
 	transition: transform .35s cubic-bezier(.17, .6, .22, .88);
 	box-shadow: rgba(120, 120, 120, 0.16) 0px 10px 36px 0px, rgba(112, 112, 112, 0.06) 0px 0px 0px 1px;
+}
+
+.app-container:first-child {
+	margin-top: -0.2rem;
 }
 
 .app-container:hover {
@@ -109,8 +125,8 @@ nav::-webkit-scrollbar {
 }
 
 .app-icon {
-	width: inherit;
-	border-radius: inherit;
+	width: 28px;
+	height: 28px;
 }
 
 /** styling status bar **/
