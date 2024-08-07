@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
-    <link rel="stylesheet" href="CSS Files/Components/openCloseApps.css" />
     <link rel="stylesheet" href="CSS Files/Components/info-panel.css" />
     <title>ThanOS</title>
   </head>
@@ -25,27 +24,70 @@
           <li class="divider"></li>
           
           <li class="app-container">
-            <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;"></ion-icon>
+            <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;" onclick="openFilesApp()"></ion-icon>
           </li>
           <li class="app-container">
-            <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;"></ion-icon>
+            <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;" onclick="OpenSettingsApp()"></ion-icon>
           </li> 
           <li class="app-container">
-            <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;"></ion-icon>
+            <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;" onclick="OpenSDKApp()"></ion-icon>
           </li>
           <li class="app-container ">
-            <ion-icon name="arrow-down-outline" style="color: #e33e2b; width: 27px; height: 27px;" class="app-icon"></ion-icon>
+            <ion-icon name="arrow-down-outline" style="color: #e33e2b; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
           </li>
         </ul>
         <div class="info-panel">
           <div class="time">9:41</div>
+          <li class="divider" style="background: rgb(0, 255, 0); margin: 0.1rem;"></li>
           <div class="controls-button">Ctrls</div>
           <div class="battery-percentage"><ion-icon name="battery-charging-outline"></ion-icon></div>
         </div>
       </div>
-      
    </nav>
-   
+   <!-- Apps -->
+   <div id="files-window" class="update-window">
+    <div id="files-windowheader" class="update-windowheader">
+      Files
+
+      <div class="window-buttons">
+        <div class="closeButton" onclick="closeFeaturesWindow()">
+          <ion-icon name="close"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="window-flex-row-wrapper">
+        <ion-icon
+          name="folder"
+          class="check-icon"
+          style="color: #3572EF;"
+        ></ion-icon>
+        <div class="update-window-text">
+          <h1>Files is Coming Soon!</h1>
+          ThanOS System Services are currently in Development. We are working tirelessly into making them stable and working! Files is expected to release in ThanOS 1.0.5 Beta 5 or 6.
+        </div>
+      </div>
+      <div class="window-continue-button-wrapper">
+        <button
+          class="window-button-continue"
+          style="font-size: 0.75rem"
+          onclick="openUpdateResolver()"
+          id="helpButton"
+        >
+          Contribute to ThanOS
+        </button>
+        <button
+          class="window-button-continue"
+          style="margin-left: 10px"
+          onclick="closeUpdateChecker()"
+          id="closeButton"
+        >
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+   <!-- Right Click Context Menu -->
     <div class="wrapper">
       <div class="content">
         <ul class="menu">
@@ -71,11 +113,27 @@
     </div>
   </body>
   <script>
+    // For Opening Apps 
+    function openFilesApp(){
+      alert("Files App Opened");
+      // Not yet production-ready
+    }
+  </script>
+
+<!-- Scrap Code -- Just for testing -->
+  <script>
+const updateWindow = document.getElementById("files-window");
+    function openUpdateChecker() {
+  updateWindow.style.display = "block";
+  updateWindow.style.animationDelay = "0.75s";
+  updateWindow.style.animation =
+    "windowIntro .45s cubic-bezier(.17,.6,.22,.88)";
+}
+openUpdateChecker()
   </script>
   <!-- Scripts Sources -->
   <script src="Javascript Files/RighClickActivationComponent.js"></script>
   <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
-  <script src="Javascript Files/appOpenAnimation.js"></script>
   <script src="Javascript Files/DragableWindowsScript.js"></script>
   <!-- Icon Sources -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
