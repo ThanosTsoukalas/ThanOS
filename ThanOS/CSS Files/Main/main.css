@@ -1,4 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/iciel-gotham');
+/*I am thinking to use Figtree as the System Font. What do you think?*/
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
 	--color-blurple: #7289da;
@@ -11,13 +13,17 @@
 	--color-fantastic-green: #00ae7a;
 }
 
+* {
+	letter-spacing: -0.5px;
+}
+
 body {
-	background-image: url(DefaultWallpaper.jpg);
+	background-image: url(Final\ Background\ ThanOS.png);
 	/*Only works if the file is in the parent folder; DO NOT MOVE*/
 	background-repeat: no-repeat;
+	font-family: 'iCiel Gotham';
 	background-position: left top;
 	background-size: cover;
-	font-family: 'iCiel Gotham';
 	color: var(--color-lighter-dark);
 	min-height: 100vh;
 	overflow: hidden;

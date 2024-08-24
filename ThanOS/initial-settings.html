@@ -105,6 +105,41 @@
       </div>
     </div>
     </div>
+
+    <div id="error-window" class="update-window">
+      <div id="error-windowheader" class="update-windowheader">
+        Fatal Error
+      </div>
+      <div class="window-content">
+        <div class="window-flex-row-wrapper">
+          <ion-icon name="close-circle-outline" class="check-icon"></ion-icon>
+          <div class="update-window-text">
+            <h1>There was a Fatal Error!</h1>
+            <p id="error-paragraph">ThanOS has trouble reading some critical files, meaning that your experience installing ThanOS might not be smooth sailing. A simple fix is to just re-download the latest version of ThanOS. If there is still a problem, try downgrading to an older version until the issue gets fixed.</p>
+          </div>
+        </div>
+        <div class="window-continue-button-wrapper">
+          <button
+            class="window-button-continue"
+            style="font-size: 0.75rem"
+            onclick="openUpdateResolver()"
+            id="helpButton"
+          >
+            Continue Anyway
+          </button>
+          <button
+            class="window-button-continue"
+            style="margin-left: 10px"
+            onclick="reInstallThanOSFromError()"
+            id="closeButton"
+          >
+            Re-install
+          </button>
+        </div>
+      </div>
+    </div>
+
+
     <div class="wrapper">
       <div class="content">
         <ul class="menu">
@@ -129,63 +164,11 @@
       </div>
     </div>
   </body>
-  <!-- DO NOT MAKE THIS SCRIPT MODULAR (AKA DO NOT MOVE THIS IN ANOTHER FILE) -->
-  <script>
-    const next = document.getElementById('installation-next-button');
-    const installationHeading = document.getElementById('installation-heading');
-    const privacyNotice = document.getElementById('privacy-notice');
-    const noThanksForQuickSetup = document.getElementById('no-thanks-for-quick-setup');
-    const QuickSetupInfo = document.getElementById('quick-setup-info');
-    let clickState = 0;
-    let enterWorkspace = false;
-    // writeFile is used to store the user's preferences across the platform by writing on the 'System Files' Folder.
-    // writeFile also does not work yet, meaning that the user's settings aren't saved. Expected to work on beta 4 (currently on beta 1)
-    let writeFile = ''; 
-
-    next.addEventListener('click', function(){
-      if (clickState === 0){
-        document.querySelector('.screen-mode-wrapper').style.display = 'none';
-        installationHeading.innerHTML = 'Choose your location.';
-        document.getElementById('choose-region').style.display = 'flex';
-        document.getElementById('language-notice').style.display = 'flex';
-        clickState = 1;
-      } else if (clickState === 1){
-        document.querySelector('.screen-mode-wrapper').style.display = 'none';
-        document.getElementById('choose-region').style.display = 'none';
-        document.getElementById('language-notice').style.display = 'none';
-        privacyNotice.style.display = 'flex';
-        installationHeading.innerHTML = 'Privacy and Security';
-        clickState = 2;
-      }else if (clickState === 2){
-        document.querySelector('.screen-mode-wrapper').style.display = 'none';
-        document.getElementById('privacy-notice').style.display = 'none';
-        document.getElementById('choose-region').style.display = 'none';
-        noThanksForQuickSetup.style.display = 'initial';
-        installationHeading.innerHTML = 'Quick Setup';
-        QuickSetupInfo.style.display = 'initial';
-        next.innerHTML = 'Import from file'
-        clickState = 3;
-      }else if (clickState === 3){
-        window.location.href = 'workspace.html';
-      }
-    })
-    noThanksForQuickSetup.addEventListener('click', function(){
-      document.querySelector('.screen-mode-wrapper').style.display = 'none';
-      document.getElementById('privacy-notice').style.display = 'none';
-      document.getElementById('choose-region').style.display = 'none';
-      installationHeading.innerHTML = 'You are all set!';
-      noThanksForQuickSetup.style.display = 'none';
-      QuickSetupInfo.style.display = 'none';
-      next.innerHTML = 'Enter Workspace!';
-    })
-    // used for debugging
-    console.log(clickState);
-    console.log(writeFile)
-  </script>
-  <!-- Scripts Sources -->
+    <!-- Scripts Sources -->
   <script src="Javascript Files/RighClickActivationComponent.js"></script>
   <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
   <script src="Javascript Files/DragableWindowsScript.js"></script>
+  <script src="setup.js"></script>
   <!-- Icon Sources -->
   <script
     type="module"

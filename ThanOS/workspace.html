@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.25" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.2" />
     <!-- Essential System Styles -->
     <link rel="stylesheet" href="CSS Files/Main/main.css" />
     <link rel="stylesheet" href="CSS Files/Components/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/splashScreen.css" />
     <link rel="stylesheet" href="CSS Files/Components/info-panel.css" />
+    <link rel="stylesheet" href="CSS Files/Apps/settings.css" />
     <title>ThanOS</title>
   </head>
   <body id="body">
@@ -23,11 +24,11 @@
           </li>
           <li class="divider"></li>
           
-          <li class="app-container">
-            <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;" onclick="openFilesApp()"></ion-icon>
+          <li class="app-container" onclick="openFilesApp()">
+            <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;" ></ion-icon>
           </li>
-          <li class="app-container">
-            <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;" onclick="OpenSettingsApp()"></ion-icon>
+          <li class="app-container" onclick="OpenSettingsApp()">
+            <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;"></ion-icon>
           </li> 
           <li class="app-container">
             <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;" onclick="OpenSDKApp()"></ion-icon>
@@ -35,8 +36,11 @@
           <li class="app-container ">
             <ion-icon name="arrow-down-outline" style="color: #e33e2b; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
           </li>
+          <li class="app-container ">
+            <ion-icon name="cube-outline" style="color: #f58300; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
+          </li>
         </ul>
-        <div class="info-panel">
+        <div class="info-panel" onclick="openControls()">
           <div class="time">9:41</div>
           <li class="divider" style="background: rgb(0, 255, 0); margin: 0.1rem;"></li>
           <div class="controls-button">Ctrls</div>
@@ -45,12 +49,12 @@
       </div>
    </nav>
    <!-- Apps -->
+    <!-- Files -->
    <div id="files-window" class="update-window">
     <div id="files-windowheader" class="update-windowheader">
       Files
-
       <div class="window-buttons">
-        <div class="closeButton" onclick="closeFeaturesWindow()">
+        <div class="closeButton" onclick="closeFilesApp()">
           <ion-icon name="close"></ion-icon>
         </div>
       </div>
@@ -79,7 +83,7 @@
         <button
           class="window-button-continue"
           style="margin-left: 10px"
-          onclick="closeUpdateChecker()"
+          onclick="closeFilesApp()"
           id="closeButton"
         >
           Close Window
@@ -87,6 +91,47 @@
       </div>
     </div>
   </div>
+
+  <!-- Settings -->
+  <div id="settings-window" class="update-window">
+    <div id="settings-windowheader" class="update-windowheader">
+      Settings
+      <div class="window-buttons">
+        <div class="closeButton">
+          <ion-icon name="close" onclick="closeSettingsApp()"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="window-menu-vertical">
+        <div class="search-bar-for-settings">
+          <ion-icon name="search-outline" class="search-icon-settings"></ion-icon>
+          <input type="text" class="search-input" placeholder="Search Settings">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Viewer -->
+  <div id="3d-viewer-window" class="update-window">
+    <div id="3d-viewer-windowheader" class="update-windowheader">
+      3D Viewer
+      </div>
+    <div class="window-content">
+      <div class="window-menu-vertical"></div>
+    </div>
+  </div>
+
+  <!-- Other Utlities -->
+   <!-- Search -->
+    <div id="search-window" class="searchWindow">
+      <div class="search-icon-container">
+        <ion-icon name="search-outline" class="search-icon"></ion-icon>
+      </div>
+      <div class="input-container">
+        <input type="text" id="search-input-field" class="search-input" placeholder="Press ESC to exit">
+      </div>
+    </div>
    <!-- Right Click Context Menu -->
     <div class="wrapper">
       <div class="content">
@@ -112,29 +157,12 @@
       </div>
     </div>
   </body>
-  <script>
-    // For Opening Apps 
-    function openFilesApp(){
-      alert("Files App Opened");
-      // Not yet production-ready
-    }
-  </script>
-
-<!-- Scrap Code -- Just for testing -->
-  <script>
-const updateWindow = document.getElementById("files-window");
-    function openUpdateChecker() {
-  updateWindow.style.display = "block";
-  updateWindow.style.animationDelay = "0.75s";
-  updateWindow.style.animation =
-    "windowIntro .45s cubic-bezier(.17,.6,.22,.88)";
-}
-openUpdateChecker()
-  </script>
   <!-- Scripts Sources -->
   <script src="Javascript Files/RighClickActivationComponent.js"></script>
   <script src="Javascript Files/ViewVersionHistoryButtonLink.js"></script>
   <script src="Javascript Files/DragableWindowsScript.js"></script>
+  <script src="Javascript Files/workspace.js"></script>
+  <script src="Javascript Files/System/keyboardShortcutForSearch.js"></script>
   <!-- Icon Sources -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

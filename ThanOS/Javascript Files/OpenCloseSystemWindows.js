@@ -28,8 +28,7 @@ function closeResolveWindow() {
 function openUpdateResolver() {
   resolveWindow.style.display = "block";
   resolveWindow.style.animationDelay = "0.75s";
-  resolveWindow.style.animation =
-    "windowIntro .45s cubic-bezier(.17,.6,.22,.88)";
+  resolveWindow.style.animation = "windowIntro .45s cubic-bezier(.17,.6,.22,.88)";
 }
 function openUpdateChecker() {
   updateWindow.style.display = "block";

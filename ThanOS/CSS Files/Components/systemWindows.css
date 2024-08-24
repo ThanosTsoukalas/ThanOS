@@ -1,6 +1,4 @@
 /*Used only for system windows during updates and first uses*/
-
-
 /*Dragable Window*/
 /*Using IDs because of javascript; you can also select them with classes*/
 .update-window {
@@ -15,8 +13,8 @@
     width: 39rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     min-height: 5rem;
-  }
-  
+}
+
 .update-windowheader {
     padding: 10px;
     z-index: 10;
@@ -24,34 +22,39 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: default;
-    background: rgb(82,81,81);
-    background: linear-gradient(0deg, rgba(82,81,81,1) 4%, rgba(105,105,105,1) 100%);
+    background: rgb(82, 81, 81);
+    background: linear-gradient(0deg, rgba(82, 81, 81, 1) 4%, rgba(105, 105, 105, 1) 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-.update-window .window-content{
+}
+
+.update-window .window-content {
     min-height: 5rem;
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
-.update-window .window-content .window-flex-row-wrapper{
+
+.update-window .window-content .window-flex-row-wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-bottom: 10px;
 }
-.update-window .window-content .check-icon{
+
+.update-window .window-content .check-icon {
     color: rgb(20, 176, 20);
     font-size: 5rem;
     padding: 0.5rem;
 }
-.update-window .window-content .update-window-text{
+
+.update-window .window-content .update-window-text {
     padding: 0.5rem;
 }
-.update-window .window-content .update-window-text h1{
+
+.update-window .window-content .update-window-text h1 {
     padding-bottom: 0.7rem;
     font-size: 1.7rem;
 }
@@ -59,12 +62,13 @@
 
 /*For buttons on window*/
 
-.window-continue-button-wrapper{
+.window-continue-button-wrapper {
     display: flex;
     justify-content: center;
     padding: 0.5rem;
 }
-.window-button-continue{
+
+.window-button-continue {
     cursor: pointer;
     width: 10rem;
     height: 2rem;
@@ -77,57 +81,114 @@
     border: 1px solid #404041;
     border-radius: 25px;
 }
-.window-button-continue:hover{
-    animation: changeButtonColorDefaultLayout .35s cubic-bezier(.17,.6,.22,.88);
+
+.window-button-continue:hover {
+    animation: changeButtonColorDefaultLayout .35s cubic-bezier(.17, .6, .22, .88);
     animation-fill-mode: forwards;
 }
 
 
-@keyframes windowIntro{
-    0%{opacity: 0%; scale: 0.5;}
-    100%{opacity: 100%; scale: 1;}
+@keyframes windowIntro {
+    0% {
+        opacity: 0%;
+        scale: 0.5;
+    }
+
+    100% {
+        opacity: 100%;
+        scale: 1;
+    }
 }
 
-@keyframes windowOutro{
-    0%{opacity: 100%; scale: 1;}
-    100%{opacity: 0%; scale: 0.5;}
+@keyframes windowOutro {
+    0% {
+        opacity: 100%;
+        scale: 1;
+    }
+
+    100% {
+        opacity: 0%;
+        scale: 0.5;
+    }
 }
 
 /*Resolve Window styles*/
-.resolve-window-content{
+.resolve-window-content {
     min-height: 5rem;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.resolve-window-button-container{
+
+.resolve-window-button-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1.5rem;
 }
 
-.window-button-continue-resolve-wrapper{
+.window-button-continue-resolve-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.update-windowheader .window-buttons .closeButton{
+
+.update-windowheader .window-buttons .closeButton {
     margin-left: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    background: rgb(164,0,0);
-    background: linear-gradient(0deg, rgba(164,0,0,1) 8%, rgba(255,0,0,1) 100%);
+    background: rgb(164, 0, 0);
+    background: linear-gradient(0deg, rgba(164, 0, 0, 1) 8%, rgba(255, 0, 0, 1) 100%);
     width: auto;
     height: auto;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.list-chevron{
+.list-chevron {
     transform: translateY(6px);
     padding: 0.3rem;
+}
+
+
+.searchWindow{
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    display: none;
+    width: 17rem;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    height: fit-content;
+    padding: 0.3rem;
+    align-items: center;
+    justify-content: space-around;
+}
+.searchWindow .search-icon{
+    transform: translateY(2px);
+    margin-right: 3px;
+    font-size: 1.16rem;
+    font-weight: 500;
+}
+input{
+    font-family: 'iCiel Gotham';
+    font-weight: 300;
+    letter-spacing: -1px;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    height: 1.5rem;
+    font-size: 1.12rem;
+}
+input:focus{
+    outline: none;
+    font-weight: 300;
+    color: #404041;
 }
