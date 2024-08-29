@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/infoPanel.css" />
     <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/controlPanelMain.css" />
     <link rel="stylesheet" href="CSS Files/Apps/settings.css" />
-    
+
     <title>ThanOS</title>
   </head>
   <body id="body">
@@ -42,7 +42,7 @@
           </li>
         </ul>
         <div class="info-panel" onclick="openControls()">
-          <div class="time">9:41</div>
+          <div class="time" id="timeContainer"></div>
           <li class="divider" style="background: rgb(0, 255, 0); margin: 0.1rem;"></li>
           <div class="controls-button">Ctrls</div>
           <div class="battery-percentage"><ion-icon name="battery-charging-outline"></ion-icon></div>
@@ -177,6 +177,7 @@
   <script src="Javascript Files/DragableWindowsScript.js"></script>
   <script src="Javascript Files/workspace.js"></script>
   <script src="Javascript Files/System/Context and Search/keyboardShortcutForSearch.js"></script>
+  <script src="Javascript Files/System/time.js"></script>
   <!-- Icon Sources -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
