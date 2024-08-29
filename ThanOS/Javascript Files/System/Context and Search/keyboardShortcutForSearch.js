@@ -36,6 +36,7 @@ document.addEventListener('keydown', e =>{
                 }
             }
             // If the user actually types something into the search bar, then make suggestions visible
+            // currently working on that 
             else{
                 checkInput()
             }
