@@ -6,20 +6,28 @@ let largeTimeContainer = document.getElementById('LargeTimeContainer');
 let dateContainer = document.getElementById('DateContainer');
 
 setInterval(() => {
-    displayTime(timeContainer)
-    displayTime(largeTimeContainer)
+    displayTime(timeContainer, 'false')
+    displayTime(largeTimeContainer, 'true')
     displayDate(dateContainer)
 }, 1000);
 
-function displayTime(timeElement){
+function displayTime(timeElement, secDisplay){
     let time = new Date();
     let hour = time.getHours();
     let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
 
     hour = hour < 10 ? "0" + hour : hour;
     minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+    let localTime = '';
 
-    let localTime = hour + ":" + minutes;
+    if (secDisplay === 'false'){
+        localTime = hour + ":" + minutes;
+    }else if(secDisplay === 'true'){
+        localTime = hour + ":" + minutes + ":" + seconds;
+    }
 
     timeElement.innerHTML = localTime;
 
@@ -32,7 +40,7 @@ function displayDate(dateElement){
 
     let dateNum = date.getDate();
     let day = weekday[date.getDay()];
-    let month = monthString[date.getMonth() + 1];
+    let month = monthString[date.getMonth()];
     let year = date.getFullYear();
     
     dateElement.innerHTML = day + ", " + month + " " + dateNum + ", " + year;
@@ -41,6 +49,6 @@ function displayDate(dateElement){
 
 
 
-displayTime(timeContainer);
-displayTime(largeTimeContainer);
+displayTime(timeContainer, 'false');
+displayTime(largeTimeContainer, 'true');
 displayDate(dateContainer)

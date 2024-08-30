@@ -1,7 +1,7 @@
 .control-panel{
     display: flex;
     flex-direction: column;
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.88);
     color: white;
     font-weight: 100;
     position: fixed;
@@ -11,6 +11,7 @@
     margin-left: -18rem;
     animation-fill-mode: forwards;
     z-index: -10;
+    backdrop-filter: blur(20px);
 }
 
 @keyframes controlPanelIn{
@@ -28,12 +29,13 @@
 
 /* Panel contents */
 .control-panel .control-panel-header{
-    background-color: rgb(1, 91, 1);
+    background-color: rgba(1, 91, 1, 0.85);
     padding: 0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    backdrop-filter: blur(20px);
 }
 
 .control-panel .large-time-container{
@@ -48,4 +50,8 @@
     color: rgb(188, 239, 188);
 }
 
-
+.control-panel .control-panel-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
