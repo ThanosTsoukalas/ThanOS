@@ -41,7 +41,7 @@
             <ion-icon name="cube-outline" style="color: #f58300; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
           </li>
         </ul>
-        <div class="info-panel" onclick="openControls()">
+        <div class="info-panel" onclick="Controls()">
           <div class="time" id="timeContainer"></div>
           <li class="divider" style="background: rgb(0, 255, 0); margin: 0.1rem;"></li>
           <div class="controls-button">Ctrls</div>
@@ -134,18 +134,22 @@
       </div>
     </div>
 
+
     <!-- Control Panel -->
-    <div class="control-panel">
+    <div class="control-panel" id="controlPanel">
       <div class="control-panel-header">
-        
+        <div class="large-time-container" id="LargeTimeContainer"></div>
+        <div class="date-container" id="DateContainer"></div>
       </div>
       <div class="control-panel-contents">
-
+        No contents yet
       </div>
       <div class="control-panel-more-options">
-
+        ...
       </div>
     </div> 
+
+
    <!-- Right Click Context Menu -->
     <div class="wrapper">
       <div class="content">
@@ -178,6 +182,7 @@
   <script src="Javascript Files/workspace.js"></script>
   <script src="Javascript Files/System/Context and Search/keyboardShortcutForSearch.js"></script>
   <script src="Javascript Files/System/time.js"></script>
+  <script src="Javascript Files/System/openControls.js"></script>
   <!-- Icon Sources -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

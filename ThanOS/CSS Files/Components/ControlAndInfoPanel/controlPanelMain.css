@@ -1,0 +1,51 @@
+.control-panel{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    color: white;
+    font-weight: 100;
+    position: fixed;
+    width: 17rem;
+    height: 100%;
+    justify-content: space-between;
+    margin-left: -18rem;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+@keyframes controlPanelIn{
+    0% {margin-left: -18rem;}
+    100%{margin-left: 5rem;}
+}
+@keyframes controlPanelOut{
+    0%{margin-left: 5rem;}
+    100% {margin-left: -18rem;}
+}
+.control-panel .control-panel-more-options{
+    margin-bottom: 0.3rem;
+}
+
+
+/* Panel contents */
+.control-panel .control-panel-header{
+    background-color: rgb(1, 91, 1);
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control-panel .large-time-container{
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.control-panel .date-container{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    color: rgb(188, 239, 188);
+}
+
+
