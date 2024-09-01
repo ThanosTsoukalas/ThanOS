@@ -103,12 +103,11 @@
 @keyframes windowOutro {
     0% {
         opacity: 100%;
-        scale: 1;
     }
 
     100% {
         opacity: 0%;
-        scale: 0.5;
+        scale: 0.65;
     }
 }
 
@@ -156,7 +155,7 @@
 
 .searchWindow{
     position: absolute;
-    z-index: 9;
+    z-index: 99999999999999999;
     background-color: #f1f1f1;
     border: 1px solid #d3d3d3;
     border-radius: 10px;

@@ -57,16 +57,16 @@ function selectActiveWindow(){
     if (allWindows[n].classList.contains('active')) {
       allWindows[n].style.zIndex = zIndexTrack.toString();
       dragElement(allWindows[n]);
+      zIndexTrack =+ 1;
     }
   }
+
 }
 
 function activateWindow(windowElement){
   document.getElementById(windowElement).classList.add('active');
 }
 
-setTimeout(() => {
-  setInterval(() => {
-    selectActiveWindow();
-  }, 1);
-}, 750);
+setInterval(() => {
+  selectActiveWindow();
+}, 10);

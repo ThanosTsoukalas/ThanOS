@@ -16,6 +16,8 @@ document.addEventListener('keydown', e =>{
         searchInput.style.display = "flex";
         searchInput.style.animationDelay = "0.75s";
         searchInput.style.animation = "windowIntro .45s cubic-bezier(.17,.6,.22,.88)";
+        searchInput.style.top = '45%';
+        searchInput.style.left = 'calc(50% - 5.1rem)';
 
         searchInputField.focus();
         // Then, we are checking for shortcuts inside 

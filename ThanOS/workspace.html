@@ -25,10 +25,10 @@
           </li>
           <li class="divider"></li>
           
-          <li class="app-container" onclick="openFilesApp()">
+          <li class="app-container" onclick="openApp('files-window')">
             <ion-icon name="folder" class="app-icon" style="color: #3572EF; width: 25px; height: 25px;" ></ion-icon>
           </li>
-          <li class="app-container" onclick="OpenSettingsApp()">
+          <li class="app-container" onclick="openApp('settings-window')">
             <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;"></ion-icon>
           </li> 
           <li class="app-container">
@@ -51,11 +51,11 @@
    </nav>
    <!-- Apps -->
     <!-- Files -->
-   <div id="files-window" class="update-window">
+   <div id="files-window" class="update-window" onclick="activateWindow('files-window');">
     <div id="files-windowheader" class="update-windowheader">
       Files
       <div class="window-buttons">
-        <div class="closeButton" onclick="closeFilesApp()">
+        <div class="closeButton" onclick="closeApp('files-window')">
           <ion-icon name="close"></ion-icon>
         </div>
       </div>
@@ -84,7 +84,7 @@
         <button
           class="window-button-continue"
           style="margin-left: 10px"
-          onclick="closeFilesApp()"
+          onclick="closeApp('files-window')"
           id="closeButton"
         >
           Close Window
@@ -94,12 +94,12 @@
   </div>
 
   <!-- Settings -->
-  <div id="settings-window" class="update-window">
+  <div id="settings-window" class="update-window" onclick="activateWindow('settings-window');">
     <div id="settings-windowheader" class="update-windowheader">
       Settings
       <div class="window-buttons">
         <div class="closeButton">
-          <ion-icon name="close" onclick="closeSettingsApp()"></ion-icon>
+          <ion-icon name="close" onclick="closeApp('settings-window')"></ion-icon>
         </div>
       </div>
     </div>
@@ -109,12 +109,21 @@
           <ion-icon name="search-outline" class="search-icon-settings"></ion-icon>
           <input type="text" class="search-input" placeholder="Search Settings">
         </div>
+        <button
+          class="window-button-continue"
+          style="margin-left: 10px"
+          onclick="changeBackground()"
+          id="closeButton"
+        >
+          Change Background
+        </button>
       </div>
     </div>
   </div>
 
   <!-- 3D Viewer -->
-  <div id="3d-viewer-window" class="update-window">
+
+  <div id="3d-viewer-window" class="update-window" onclick="activateWindow('3d-viewer-window');">
     <div id="3d-viewer-windowheader" class="update-windowheader">
       3D Viewer
       </div>
@@ -142,17 +151,34 @@
         <div class="date-container" id="DateContainer"></div>
       </div>
       <div class="control-panel-contents">
-        Quick Settings
+        Quick Controls
         <div class="dark-light-mode-container">
-          <ion-icon name="sunny" class="dark-light-mode-icon"></ion-icon>
+          <div class="flex-light-dark-mode-container">
+            <div class="mode-container">
+              <ion-icon name="sunny" class="dark-light-mode-icon"></ion-icon>
+            </div>
+            <div class="mode-container">
+              <ion-icon name="moon" class="dark-light-mode-icon"></ion-icon>
+            </div>
+          </div>
         </div>
         <div class="control-panel-more-options">
-          ...
+          <div class="modifiers-button" onclick="showModifiers()">
+            Show Modifiers
+          </div>
         </div>
       </div>
-      
     </div> 
 
+  <!-- Modifiers Window -->
+  <div id="modifier-viewer-window" class="update-window" onclick="activateWindow('modifier-viewer-window');">
+    <div id="modifier-viewer-windowheader" class="update-windowheader">
+      Modifier Manager
+      </div>
+    <div class="window-content">
+      <div class="modifiers-grid"></div>
+    </div>
+  </div>
 
    <!-- Right Click Context Menu -->
     <div class="wrapper">
