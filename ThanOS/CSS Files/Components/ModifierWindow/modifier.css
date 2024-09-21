@@ -1,0 +1,20 @@
+#modifier-viewer-window{
+    margin: 0;
+    padding: 0;
+}
+
+#modifier-viewer-window .window-content{
+    margin: 0;
+    padding: 0;
+}
+.modifiers-grid{
+    display: inline-block;
+}
+.modifier-container{
+    border-top: none;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem;
+    font-weight: 100;
+}

@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.2" />
     <!-- Essential System Styles -->
     <link rel="stylesheet" href="CSS Files/Main/main.css" />
+    <link rel="stylesheet" href="CSS Files/Components/ModifierWindow/modifier.css" />
     <link rel="stylesheet" href="CSS Files/Components/WindowsAndWorkspace/systemWindows.css" />
     <link rel="stylesheet" href="CSS Files/Main/reset.css" />
     <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/infoPanel.css" />
     <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/controlPanelMain.css" />
     <link rel="stylesheet" href="CSS Files/Apps/settings.css" />
+    <link rel="stylesheet" href="CSS Files/Apps/programmingDevelopmentKit.css" />
 
     <title>ThanOS</title>
   </head>
   <body id="body">
+    <audio src="/ThanOS/Sounds/ThanOSStartupSoundMP3.mp3" autoplay>
+      <source src="/ThanOS/Sounds/ThanOSStartupSoundMP3.mp3">
+    </audio>
     <nav>
       <div class="guilds-container">
         <ul class="apps-constainer">
@@ -31,8 +36,8 @@
           <li class="app-container" onclick="openApp('settings-window')">
             <ion-icon name="cog" class="app-icon" style="color: #38419D; width: 29px; height: 29px;"></ion-icon>
           </li> 
-          <li class="app-container">
-            <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;" onclick="OpenSDKApp()"></ion-icon>
+          <li class="app-container" onclick="openApp('pdk-window')">
+            <ion-icon name="hammer" style="color: green; width: 23px; height: 23px;"></ion-icon>
           </li>
           <li class="app-container ">
             <ion-icon name="arrow-down-outline" style="color: #e33e2b; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
@@ -113,7 +118,6 @@
           class="window-button-continue"
           style="margin-left: 10px"
           onclick="changeBackground()"
-          id="closeButton"
         >
           Change Background
         </button>
@@ -132,6 +136,40 @@
     </div>
   </div>
 
+  <!-- Programming Development Kit -->
+  <div id="pdk-window" class="update-window" onclick="activateWindow('pdk-window');">
+    <div id="pdk-windowheader" class="update-windowheader">
+      Programming Development Kit Manager
+      <div class="window-buttons">
+        <div class="closeButton">
+          <ion-icon name="close" onclick="closeApp('pdk-window')"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="pdk-header">
+        <h2>All Development Apps & Services</h2>
+        <p class="pdk-description">Choose an app, service or feature to install. Apps and
+        Services are directly connected to your running version of ThanOS and are not updated through the web.</p>
+      </div>
+      <div class="pdk-card-content">
+
+        <div class="pdk-card">
+          <ion-icon name="code-outline" class="pdk-card-icon"></ion-icon>
+          <div class="pdk-description-wrapper">
+            <h3 style="font-weight: 400;">Developer MiniApps</h3>
+            <p class="pdk-description">
+              Developer MiniApps allows Developers to intuitively interact
+              with many of ThanOS' core APIs and Libraries, including DisplayAPI.
+            </p>
+          </div>
+            <button class="window-button-continue" style="margin-left: 10px" onclick="installDevApp('dev-mini-apps-window')"> Install</button>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
   <!-- Other Utlities -->
    <!-- Search -->
     <div id="search-window" class="searchWindow">
@@ -163,8 +201,11 @@
           </div>
         </div>
         <div class="control-panel-more-options">
-          <div class="modifiers-button" onclick="showModifiers()">
+          <div class="modifiers-button" onclick="openApp('modifier-viewer-window')">
             Show Modifiers
+          </div>
+          <div class="modifiers-button" onclick="openApp('modifier-viewer-window')"></div>
+            Advanced Options
           </div>
         </div>
       </div>
@@ -174,9 +215,16 @@
   <div id="modifier-viewer-window" class="update-window" onclick="activateWindow('modifier-viewer-window');">
     <div id="modifier-viewer-windowheader" class="update-windowheader">
       Modifier Manager
+       <div class="window-buttons">
+        <div class="closeButton">
+          <ion-icon name="close" onclick="closeApp('modifier-viewer-window')"></ion-icon>
+        </div>
+      </div>
       </div>
     <div class="window-content">
-      <div class="modifiers-grid"></div>
+      <div class="modifiers-grid">
+        <div class="modifier-container" id="SystemModifierContainer">System Modifiers</div>
+      </div>
     </div>
   </div>
 
@@ -186,6 +234,9 @@
         <ul class="menu">
           <li class="item">
             <span>Preview</span>
+          </li>
+          <li class="item">
+            <span>New Folder</span>
           </li>
           <li class="item">
             <span>Get Path Address</span>
@@ -213,6 +264,13 @@
   <script src="Javascript Files/System/Context and Search/keyboardShortcutForSearch.js"></script>
   <script src="Javascript Files/System/time.js"></script>
   <script src="Javascript Files/System/openControls.js"></script>
+
+<!-- Registry Import -->
+<script src="Javascript Files/System/VariableRegistry/userVariableRegistryMainCritical.js"></script>
+  <!-- Library Sources -->
+    <!-- TGL -->
+    <!-- DisplayAPI -->
+    <script src="Libraries/DisplayAPI/DisplayAPIMain.js"></script>
   <!-- Icon Sources -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,1 @@
+// This is a backup for the variable registry

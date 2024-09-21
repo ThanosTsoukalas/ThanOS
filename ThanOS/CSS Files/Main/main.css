@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/iciel-gotham');
 /*I am thinking to use Figtree as the System Font. What do you think?*/
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root {
 	--color-blurple: #7289da;
 	--color-not-quite-black: #23272a;
@@ -28,8 +28,9 @@ body {
 	min-height: 100vh;
 	overflow: hidden;
 	justify-content: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: none;
+	font-weight: 100;
+	cursor: url('ThanOSCursorWithShadowNormalSize.png'), auto;
 }
 
 nav {
@@ -304,4 +305,11 @@ nav::-webkit-scrollbar {
 .share:hover .share-menu {
 	opacity: 1;
 	pointer-events: auto;
+}
+
+.pdk-description{
+	color: #535353;
+	font-size: 0.8rem;
+	font-weight: 100;
+	margin-top: 0.3rem;
 }

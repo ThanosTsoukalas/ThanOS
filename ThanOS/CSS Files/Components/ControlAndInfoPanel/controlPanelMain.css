@@ -24,6 +24,8 @@
 }
 .control-panel .control-panel-more-options{
     margin-bottom: 0.3rem;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -98,6 +100,7 @@
     border-radius: 25px;
     margin-top: 1rem;
     cursor: pointer;
+    height: fit-content;
 }
 
 .modifiers-button:hover{

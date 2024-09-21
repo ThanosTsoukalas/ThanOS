@@ -1,0 +1,22 @@
+.pdk-card{
+    display: flex;
+    background-color: #d3d3d3;
+    padding: 0.6rem;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0.3rem;
+}
+
+.pdk-description-wrapper{
+    text-align: left;
+}
+
+.pdk-description-wrapper h3{
+    margin-bottom: -0.3rem;
+}
+
+.pdk-card-icon{
+    font-size: 3rem;
+    padding-right: 0.6rem;
+    font-weight: 300;
+}
