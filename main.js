@@ -1,4 +1,4 @@
-// 1768 lines of code in the whole platform!!!
+// 2558 lines of code in the whole platform!!!
 const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
