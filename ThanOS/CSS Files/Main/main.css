@@ -259,7 +259,7 @@ nav::-webkit-scrollbar {
 	height: 35px;
 	display: flex;
 	width: calc(100% -20px);
-	cursor: pointer;
+	cursor: url('ThanOSCursorWithShadowNormalSize.png'), auto;
 	align-items: center;
 	border-radius: 5px;
 	margin-bottom: 2px;
