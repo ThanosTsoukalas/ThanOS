@@ -1,3 +1,4 @@
 # ThanOS Desktop
-A few weeks ago, I made a Web Version of ThanOS. But it had problems. It didn't feel like a distinct Workspace. And it didn't even have the opportunity of supporting AAA Games. But now I made
-a new version of ThanOS, based on Electron. So I can code it like a website, but the result feels like a native desktop app!
+ThanOS Desktop, as the name suggests, is an HTML Based Desktop environment with an SDK Built-in, so developers can develop their own custom apps using ThanOS's APIs. 
+# Disclaimer 
+This repository is just a demo. I'm looking forward to making a full Operating System Based on C and Assembly.
