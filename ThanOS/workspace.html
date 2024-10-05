@@ -16,9 +16,6 @@
     <title>ThanOS</title>
   </head>
   <body id="body">
-    <audio src="/ThanOS/Sounds/ThanOSStartupSoundMP3.mp3" autoplay>
-      <source src="/ThanOS/Sounds/ThanOSStartupSoundMP3.mp3">
-    </audio>
     <nav>
       <div class="guilds-container">
         <ul class="apps-constainer">
@@ -45,6 +42,9 @@
           <li class="app-container ">
             <ion-icon name="cube-outline" style="color: #f58300; width: 27px; height: 27px;" class="app-icon" onclick="OpenAppStoreApp()"></ion-icon>
           </li>
+          <li class="app-container " onclick="openApp('console-window')">
+            <ion-icon name="chevron-forward" style="color:black;width: 27px; height: 27px;" class="app-icon"></ion-icon>
+          </li>
         </ul>
         <div class="info-panel" onclick="Controls()">
           <div class="time" id="timeContainer"></div>
@@ -66,34 +66,8 @@
       </div>
     </div>
     <div class="window-content">
-      <div class="window-flex-row-wrapper">
-        <ion-icon
-          name="folder"
-          class="check-icon"
-          style="color: #3572EF;"
-        ></ion-icon>
-        <div class="update-window-text">
-          <h1>Files is Coming Soon!</h1>
-          ThanOS System Services are currently in Development. We are working tirelessly into making them stable and working! Files is expected to release in ThanOS 1.0.5 Beta 5 or 6.
-        </div>
-      </div>
-      <div class="window-continue-button-wrapper">
-        <button
-          class="window-button-continue"
-          style="font-size: 0.75rem"
-          onclick="openUpdateResolver()"
-          id="helpButton"
-        >
-          Contribute to ThanOS
-        </button>
-        <button
-          class="window-button-continue"
-          style="margin-left: 10px"
-          onclick="closeApp('files-window')"
-          id="closeButton"
-        >
-          Close Window
-        </button>
+      <div class="address-bar">
+        
       </div>
     </div>
   </div>
@@ -170,6 +144,7 @@
     </div>
     
   </div>
+
   <!-- Other Utlities -->
    <!-- Search -->
     <div id="search-window" class="searchWindow">
@@ -234,6 +209,12 @@
         <ul class="menu">
           <li class="item">
             <span>Preview</span>
+          </li>
+          <li class="item">
+            <span>Open is Console</span>
+          </li>
+          <li class="item">
+            <span>Extract</span>
           </li>
           <li class="item">
             <span>New Folder</span>
