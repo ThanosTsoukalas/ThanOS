@@ -5,8 +5,8 @@ const workspace = document.getElementById('body');
 
 // Changing background
 // Variables and arguments
-const DefaultWallpaper = 'url("/ThanOS/CSS Files/Main/DefaultWallpaper.jpg")';
-const FinalBackground = 'url("/ThanOS/CSS Files/Main/Final Background ThanOS.png")';
+const DefaultWallpaper = 'url("/ThanOS/css/Main/DefaultWallpaper.jpg")';
+const FinalBackground = 'url("/ThanOS/css/Main/Final Background ThanOS.png")';
 
 let clickState = 0;
 
