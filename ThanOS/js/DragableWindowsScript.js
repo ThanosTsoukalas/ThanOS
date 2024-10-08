@@ -49,6 +49,10 @@ function dragElement(elmnt) {
   }
 }
 
+
+function activateWindow(windowElement){
+  document.getElementById(windowElement).classList.add('active');
+}
 function selectActiveWindow(){
   
   const allWindows = selectElementByIdWithWords(['window'])
@@ -56,15 +60,11 @@ function selectActiveWindow(){
     let zIndexTrack = 20;
     if (allWindows[n].classList.contains('active')) {
       allWindows[n].style.zIndex = zIndexTrack.toString();
+      zIndexTrack++;
       dragElement(allWindows[n]);
     }
   }
 }
-
-function activateWindow(windowElement){
-  document.getElementById(windowElement).classList.add('active');
-}
-
 setTimeout(() => {
   setInterval(() => {
     selectActiveWindow();

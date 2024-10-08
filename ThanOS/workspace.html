@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.2" />
     <!-- Essential System Styles -->
-    <link rel="stylesheet" href="CSS Files/Main/main.css" />
-    <link rel="stylesheet" href="CSS Files/Components/ModifierWindow/modifier.css" />
-    <link rel="stylesheet" href="CSS Files/Components/WindowsAndWorkspace/systemWindows.css" />
-    <link rel="stylesheet" href="CSS Files/Main/reset.css" />
-    <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/infoPanel.css" />
-    <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/controlPanelMain.css" />
-    <link rel="stylesheet" href="CSS Files/Apps/settings.css" />
-    <link rel="stylesheet" href="CSS Files/Apps/programmingDevelopmentKit.css" />
+    <link rel="stylesheet" href="CSS Files/Main/main.css"/>
+    <link rel="stylesheet" href="CSS Files/Components/ModifierWindow/modifier.css"/>
+    <link rel="stylesheet" href="CSS Files/Components/WindowsAndWorkspace/systemWindows.css"/>
+    <link rel="stylesheet" href="CSS Files/Main/reset.css"/>
+    <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/infoPanel.css"/>
+    <link rel="stylesheet" href="CSS Files/Components/ControlAndInfoPanel/controlPanelMain.css"/>
+    <link rel="stylesheet" href="CSS Files/Apps/settings.css"/>
+    <link rel="stylesheet" href="CSS Files/Apps/programmingDevelopmentKit.css"/>
+    <link rel="stylesheet" href="CSS Files/Components/fileAddressBar.css"/>
+    <link rel="stylesheet" href="CSS Files/Main/fs.css"/>
 
     <title>ThanOS</title>
   </head>
   <body id="body">
+    <div class="file-folder-icon" id="folder-fs">
+      <img src="/ThanOS/Assets/FoldersFilesIcons/folder-icon.png" alt="">
+    </div>
+
     <nav>
       <div class="guilds-container">
         <ul class="apps-constainer">
@@ -65,10 +71,11 @@
         </div>
       </div>
     </div>
-    <div class="window-content">
+    <div class="window-content-no-padding">
       <div class="address-bar">
-        
+        Address: <input class="address" type="text" placeholder="ERR: NoAddressSpecified?">
       </div>
+      A Fatal Error Occured! The File System is not connected at ld/fs.
     </div>
   </div>
 
@@ -140,6 +147,18 @@
             <button class="window-button-continue" style="margin-left: 10px" onclick="installDevApp('dev-mini-apps-window')"> Install</button>
         </div>
 
+        <div class="pdk-card">
+          <ion-icon name="code-outline" class="pdk-card-icon"></ion-icon>
+          <div class="pdk-description-wrapper">
+            <h3 style="font-weight: 400;">The Turing Programming Language</h3>
+            <p class="pdk-description">
+              The Turing programming language is a simple programming language 
+              that can be used as an alternative 
+              to classic Javascript for creating ThanOS executables.  It's the Official Programming Language for the ThanOS Operating System.
+            </p>
+          </div>
+            <button class="window-button-continue" style="margin-left: 10px" onclick="installDevApp('dev-mini-apps-window')"> Install</button>
+        </div>
       </div>
     </div>
     
@@ -203,6 +222,22 @@
     </div>
   </div>
 
+  <!-- Console -->
+
+  <div id="console-window" class="update-window console" onclick="activateWindow('console-window');">
+    <div id="modifier-viewer-windowheader" class="update-windowheader">
+      Console [admin]
+       <div class="window-buttons">
+        <div class="closeButton">
+          <ion-icon name="close" onclick="closeApp('console-window')"></ion-icon>
+        </div>
+      </div>
+      </div>
+    <div class="window-content console-content">
+      <div class="console-text" id="console-text"></div>
+    </div>
+  </div>
+
    <!-- Right Click Context Menu -->
     <div class="wrapper">
       <div class="content">
@@ -211,7 +246,7 @@
             <span>Preview</span>
           </li>
           <li class="item">
-            <span>Open is Console</span>
+            <span>Open in Console</span>
           </li>
           <li class="item">
             <span>Extract</span>
@@ -228,11 +263,11 @@
           <li class="item">
             <span>Delete</span>
           </li>
-        </ul>
-        <div class="setting">
           <li class="item">
             <span>Settings</span>
           </li>
+        </ul>
+        
         </div>
       </div>
     </div>
@@ -245,6 +280,7 @@
   <script src="Javascript Files/System/Context and Search/keyboardShortcutForSearch.js"></script>
   <script src="Javascript Files/System/time.js"></script>
   <script src="Javascript Files/System/openControls.js"></script>
+  <!-- Console API -->
 
 <!-- Registry Import -->
 <script src="Javascript Files/System/VariableRegistry/userVariableRegistryMainCritical.js"></script>

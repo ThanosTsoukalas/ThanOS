@@ -1,9 +1,9 @@
-/*Used only for system windows during updates and first uses*/
 /*Dragable Window*/
 /*Using IDs because of javascript; you can also select them with classes*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
 .update-window {
     position: absolute;
-    z-index: 9;
     background-color: #f1f1f1;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
@@ -15,9 +15,21 @@
     min-height: 5rem;
 }
 
+.console {
+    background-color: rgb(18, 18, 18);
+    border: none;
+    color: rgb(0, 147, 0);
+}
+
+.update-window .console-content{
+    font-family: 'Fira Code';
+    font-weight: 500;
+    padding: 0;
+}
+
 .update-windowheader {
     padding: 10px;
-    z-index: 10;
+    z-index: calc(inherit + 1);
     height: 0.5rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -33,6 +45,12 @@
 .update-window .window-content {
     min-height: 5rem;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.update-window .window-content-no-padding{
+    min-height: 5rem;
     display: flex;
     flex-direction: column;
 }
@@ -186,6 +204,7 @@ input{
     height: 1.5rem;
     font-size: 1.12rem;
 }
+
 input:focus{
     outline: none;
     font-weight: 300;
